@@ -9,7 +9,7 @@ export default defineConfig({
     vue(),
     legacy()
   ],
-  server: {
+  /*server: {
     // 允许IP访问
     host: "0.0.0.0",
     // 应用端口 (默认:3000)
@@ -24,7 +24,7 @@ export default defineConfig({
          path.replace(new RegExp("^/dev-api"), ""),
      }
    },
-   },
+   },*/
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

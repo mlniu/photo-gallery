@@ -11,6 +11,9 @@ const config: CapacitorConfig = {
       autoUpdateMethod: 'background',
       maxVersions: 2,
     },
+    CapacitorHttp: {
+      enabled: true
+    }
   },
 };
 

@@ -34,7 +34,7 @@ import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent,
  } from '@ionic/vue';
  import { reactive, ref } from 'vue'
  import router from '@/router';
- import { loginTabs } from '@/api/index';
+ import { loginTabs } from '@/httpApi';
 
  const userData = ref<any>({
     username: '',
