@@ -2,7 +2,9 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Tab 3</ion-title>
+        <ion-title>Tab 3
+          <ion-chip :outline="true" @click="outLogin">退出</ion-chip>
+        </ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true">
@@ -18,6 +20,12 @@
 </template>
 
 <script setup lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonChip } from '@ionic/vue';
 import ExploreContainer from '@/components/ExploreContainer.vue';
+import router from '@/router';
+
+//退出登录
+function outLogin(){
+  router.push({path: '/'})
+}
 </script>

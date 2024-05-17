@@ -2,7 +2,9 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Photo Gallery</ion-title>
+        <ion-title>Photo Gallery
+          <ion-chip :outline="true" @click="outLogin">退出</ion-chip>
+        </ion-title>
       </ion-toolbar>
     </ion-header>
     <!--<ion-content :fullscreen="true">
@@ -32,13 +34,19 @@
 <script setup lang="ts">
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent,
   IonFab, IonFabButton, IonIcon, IonGrid, IonRow, IonCol, IonImg,
-  actionSheetController
+  actionSheetController, IonChip
  } from '@ionic/vue';
 import { camera, trash, close } from 'ionicons/icons'
 
 
 
 import { usePhotoGallery, UserPhoto } from '@/composables/usePhotoGallery';
+import router from '@/router';
+
+//退出登录
+function outLogin(){
+  router.push({path: '/'})
+}
 
 const { takePhoto, photos, deletePhoto } = usePhotoGallery();
 
