@@ -35,6 +35,7 @@ import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent,
  import { reactive, ref } from 'vue'
  import router from '@/router';
  import { loginTabs } from '@/httpApi';
+import { Dialog } from '@capacitor/dialog';
 
  const userData = ref<any>({
     username: '',
@@ -52,6 +53,13 @@ import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent,
         await toast.present();
  }
 
+ async function showDialogAlert(){
+    await Dialog.alert({
+        title: '登录情况',
+        message: '登录成功'
+    });
+ }
+
  function login(){
     console.log('data',userData.value)
     loginTabs(userData.value).then(res => {
@@ -59,7 +67,7 @@ import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent,
         if(res){
             userData.value = {username: '',password: ''}
             router.push({path: '/tabs'})
-            
+            showDialogAlert();
         }
     }).catch(e => {
         presentToast(e);
